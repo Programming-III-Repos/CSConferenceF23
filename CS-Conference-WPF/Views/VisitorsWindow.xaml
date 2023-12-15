@@ -109,7 +109,7 @@
             <Button Grid.Column="1" Height="30" Background="Transparent" BorderThickness="0" Click="BtnLoad_Clicked" >
                 <Image Source="/Images/load-48.png"/>
             </Button>
-            <Button Grid.Column="2" Height="30" Background="Transparent" BorderThickness="0">
+            <Button Grid.Column="2" Height="30" Background="Transparent" BorderThickness="0" Click="BtnAllVisitors_Clicked">
                 <Image Source="/Images/list-64.png"/>
             </Button>
 

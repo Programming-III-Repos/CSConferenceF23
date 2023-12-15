@@ -175,5 +175,11 @@ namespace CS_Conference_WPF.Views
 
             }
         }
+
+        private void BtnAllVisitors_Clicked(object sender, RoutedEventArgs e)
+        {
+            AllVisitosWindow allVisitosWindow = new AllVisitosWindow(visitors);
+            allVisitosWindow.ShowDialog();
+        }
     }
 }
