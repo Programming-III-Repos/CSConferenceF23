@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CS Conference - Visitors" Height="450" Width="550"
         WindowStartupLocation="CenterScreen" Icon="/Images/conference-icon.ico">
-    <Grid Margin="10">
+    <Grid Margin="10" x:Name="grdMain">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -43,23 +43,23 @@
         
         <!-- Name -->
         <Label Content="Name"  Grid.Column="0" Grid.Row="2" FontWeight="Bold" Margin="0,0,0,5"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Width="150" Margin="0,0,0,5"/>
+        <TextBox x:Name="txtName" Grid.Column="1" Grid.Row="2" Width="150" Margin="0,0,0,5"/>
 
         <!-- Status -->
         <Label Content="Status"  Grid.Column="0" Grid.Row="3" FontWeight="Bold" Margin="0,0,0,5"/>
         <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,5">
-            <RadioButton Content="Teacher"/>
-            <RadioButton Content="Student"/>
-            <RadioButton Content="Professional"/>
+            <RadioButton x:Name="rdbTeacher" Content="Teacher"/>
+            <RadioButton x:Name="rbcStudent" Content="Student"/>
+            <RadioButton x:Name="rdbPro" Content="Professional"/>
         </StackPanel>
 
         <!-- Speaker -->
         <Label Content="Speaker"  Grid.Column="0" Grid.Row="4" FontWeight="Bold" Margin="0,0,0,5"/>
-        <CheckBox Content="Are you a speaker?" Grid.Column="1" Grid.Row="4" Margin="0,5,0,5"/>
+        <CheckBox x:Name="chkbSpeaker" Content="Are you a speaker?" Grid.Column="1" Grid.Row="4" Margin="0,5,0,5"/>
 
         <!-- Date -->
         <Label Content="Checkin Date"  Grid.Column="0" Grid.Row="5" FontWeight="Bold" Margin="0,0,0,5"/>
-        <DatePicker Grid.Column="1" Grid.Row="5"/>
+        <DatePicker x:Name="dpCheckin" Grid.Column="1" Grid.Row="5"/>
         
         <!-- Buttons -->
         <Grid Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" Margin="0,15,0,0">
@@ -69,7 +69,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Submit" Margin="5"/>
-            <Button Content="Clear" Grid.Column="1" Margin="5"/>
+            <Button Content="Clear" Grid.Column="1" Margin="5" Click="BtnClear_Clicked"/>
 
         </Grid>
         

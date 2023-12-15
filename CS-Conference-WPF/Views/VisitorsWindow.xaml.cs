@@ -23,5 +23,27 @@ namespace CS_Conference_WPF.Views
         {
             InitializeComponent();
         }
+
+        private void BtnClear_Clicked(object sender, RoutedEventArgs e)
+        {
+            //Approach 1: go over the UI element one by one
+            //txtName.Clear();
+            //Radio button, check box..
+
+            //Approach 2
+            foreach(object UIElement in grdMain.Children) 
+            {
+                if (UIElement is TextBox txbTemp)
+                    txbTemp.Clear();
+                else if (UIElement is RadioButton rdbTemp)
+                    rdbTemp.IsChecked = false;
+                else if (UIElement is CheckBox chkTemp)
+                    chkTemp.IsChecked = false;
+                else if (UIElement is DatePicker dpTemp)
+                    dpTemp.SelectedDate = null;
+                else if (UIElement is ComboBox cmbTemp)
+                    cmbTemp.SelectedIndex = -1;
+            }
+        }
     }
 }
