@@ -1,6 +1,8 @@
 ﻿using CS_Conference_WPF.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +26,7 @@ namespace CS_Conference_WPF.Views
         public VisitorsWindow()
         {
             InitializeComponent();
-            Seed();
+            //Seed();
             lbVisitors.ItemsSource = visitors;
         }
 
@@ -110,6 +112,47 @@ namespace CS_Conference_WPF.Views
             return false;
         }
 
-        
+        private string saveLocation;
+        private void BtnSaveClicked(object sender, RoutedEventArgs e)
+        {
+            //Check save location: prompt user for location
+            if(string.IsNullOrEmpty(saveLocation))
+            {
+                //Save diaglog appear
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "CSV Files | *.csv"; //| All Files | *.*"; 
+                if(saveFileDialog.ShowDialog() == true) 
+                {
+                    saveLocation = saveFileDialog.FileName;
+                }
+            }
+
+            //Writedata to file
+            if (!string.IsNullOrEmpty(saveLocation))
+            {
+                WriteDatatoFile();
+            }
+
+        }
+
+        //Save all data: to make sure the updates are being saved
+        private void WriteDatatoFile()
+        {
+            try
+            {
+                StringBuilder allVistors = new StringBuilder();
+                
+                foreach (Visitor visitor in visitors)
+                    allVistors.AppendLine(visitor.CSVData);
+
+                File.WriteAllText(saveLocation, allVistors.ToString());
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Error saving data to file." + ex.Message);
+            }
+        }
     }
 }

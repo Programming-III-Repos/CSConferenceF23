@@ -103,10 +103,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Height="30" Background="Transparent" BorderThickness="0">
+            <Button Height="30" Background="Transparent" BorderThickness="0" Click="BtnSaveClicked">
                 <Image Source="/Images/Save-64.png"/>
             </Button>
-            <Button Grid.Column="1" Height="30" Background="Transparent" BorderThickness="0">
+            <Button Grid.Column="1" Height="30" Background="Transparent" BorderThickness="0" >
                 <Image Source="/Images/load-48.png"/>
             </Button>
             <Button Grid.Column="2" Height="30" Background="Transparent" BorderThickness="0">

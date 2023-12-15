@@ -18,11 +18,26 @@ namespace CS_Conference_WPF.Models
         {
             return $"{Name}...";
         }
+
+        public string CSVData
+        {
+            get
+            {
+                return $"{Name},{IsSpeaker},{CheckInDate},{VisitorStatus}";
+            }
+
+            set
+            {
+                //Used for loading data.
+            }
+        }
     }
 
     public enum Status
     {
         Teacher, Student, Professional
     }
+
+    
 
 }
