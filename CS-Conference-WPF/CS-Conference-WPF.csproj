@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <RootNamespace>CS_Conference_WPF</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\conference-icon.ico" />
+    <None Remove="Images\ConferenceInformation.jpg" />
+    <None Remove="Images\list-64.png" />
+    <None Remove="Images\load-48.png" />
+    <None Remove="Images\Save-64.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\conference-icon.ico" />
+    <Resource Include="Images\ConferenceInformation.jpg" />
+    <Resource Include="Images\list-64.png" />
+    <Resource Include="Images\load-48.png" />
+    <Resource Include="Images\Save-64.png" />
+  </ItemGroup>
+
+</Project>
