@@ -181,5 +181,17 @@ namespace CS_Conference_WPF.Views
             AllVisitosWindow allVisitosWindow = new AllVisitosWindow(visitors);
             allVisitosWindow.ShowDialog();
         }
+
+        private void lbVisitors_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Visitor selectedVistor = (lbVisitors.SelectedItem) as Visitor;
+
+            if(selectedVistor != null) 
+            {
+                VistorInfoWindow vistorInfoWindow = new VistorInfoWindow(selectedVistor);
+                vistorInfoWindow.ShowDialog();
+            }
+            
+        }
     }
 }

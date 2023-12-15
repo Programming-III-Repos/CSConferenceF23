@@ -69,12 +69,13 @@
             </Grid.ColumnDefinitions>
 
             <Button Content="Submit" Margin="5" Click="BtnSubmit_Clicked"/>
-            <Button Content="Clear" Grid.Column="1" Margin="5" Click="BtnClear_Clicked"/>
+            <Button Content="Clear" Grid.Column="1" Margin="5" Click="BtnClear_Clicked" />
 
         </Grid>
         
         <!-- List Box -->
-        <ListBox x:Name="lbVisitors" Grid.Column="3" Grid.Row="2" Grid.RowSpan="4">
+        <ListBox x:Name="lbVisitors" Grid.Column="3" Grid.Row="2" Grid.RowSpan="4"
+                 MouseDoubleClick="lbVisitors_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
