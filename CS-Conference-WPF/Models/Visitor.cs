@@ -28,7 +28,25 @@ namespace CS_Conference_WPF.Models
 
             set
             {
-                //Used for loading data.
+                //Used for loading data: value, Example
+                //Ben,True,12/20/2023 11:44:16 AM,Professional
+                //[0]  [1]   [2]                    [3]
+
+                try
+                {
+                    string[] values = value.Split(',');
+                    Name = values[0];
+                    IsSpeaker = bool.Parse(values[1]);
+                    CheckInDate = DateTime.Parse(values[2]);
+                    VisitorStatus = values[3] == Status.Professional.ToString() ? Status.Professional :
+                                    values[3] == Status.Teacher.ToString() ? Status.Teacher : Status.Student;
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("CSV Visitor data are not valid" + ex.Message);
+                }
+                
+
             }
         }
     }

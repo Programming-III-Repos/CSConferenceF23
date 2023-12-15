@@ -154,5 +154,26 @@ namespace CS_Conference_WPF.Views
                 throw new Exception("Error saving data to file." + ex.Message);
             }
         }
+
+        private void BtnLoad_Clicked(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "CSV File | *.csv";
+            if(openFileDialog.ShowDialog() == true) 
+            {
+                saveLocation = openFileDialog.FileName;
+                //Next load visitors into the list
+                string[] allVisitors = File.ReadAllLines(saveLocation);
+
+                foreach (string info in allVisitors)
+                {
+                    Visitor temp = new Visitor() { CSVData = info };
+                    visitors.Add(temp);
+                }
+
+                lbVisitors.Items.Refresh();
+
+            }
+        }
     }
 }
