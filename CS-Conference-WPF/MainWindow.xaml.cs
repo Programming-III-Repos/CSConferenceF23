@@ -90,7 +90,7 @@ namespace CS_Conference_WPF
             try
             {
                 //NEVER USE MAGIC VALUES: "Organizers.csv"
-                File.AppendAllText("Organizers.csv", organizer.ToString());
+                File.AppendAllText("Organizers.csv", organizer.ToString()+"\n");
             }
             catch (Exception ex)
             {
