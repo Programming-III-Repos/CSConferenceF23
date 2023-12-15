@@ -49,7 +49,7 @@
         <Label Content="Status"  Grid.Column="0" Grid.Row="3" FontWeight="Bold" Margin="0,0,0,5"/>
         <StackPanel Grid.Column="1" Grid.Row="3" Margin="0,0,0,5">
             <RadioButton x:Name="rdbTeacher" Content="Teacher"/>
-            <RadioButton x:Name="rbcStudent" Content="Student"/>
+            <RadioButton x:Name="rdbStudent" Content="Student"/>
             <RadioButton x:Name="rdbPro" Content="Professional"/>
         </StackPanel>
 
@@ -68,13 +68,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Submit" Margin="5"/>
+            <Button Content="Submit" Margin="5" Click="BtnSubmit_Clicked"/>
             <Button Content="Clear" Grid.Column="1" Margin="5" Click="BtnClear_Clicked"/>
 
         </Grid>
         
         <!-- List Box -->
-        <ListBox Grid.Column="3" Grid.Row="2" Grid.RowSpan="4"/>
+        <ListBox x:Name="lbVisitors" Grid.Column="3" Grid.Row="2" Grid.RowSpan="4"/>
         
         <!-- Second Set of Buttons -->
         <Grid Grid.Column="3" Grid.Row="6">
